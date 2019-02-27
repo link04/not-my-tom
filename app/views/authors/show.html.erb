@@ -1,0 +1,14 @@
+<h1><%= @author.name %> (b.<%= @author.birth_year %>)</h1>
+
+<span>Books:</span>
+
+<ul>
+  <% @author.books.each do |book| %>
+  <li><%= book.title %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Delete',
+             author_path(@author),
+                         method: :destroy,
+                         data: { confirm: 'Are you sure?' } %>
